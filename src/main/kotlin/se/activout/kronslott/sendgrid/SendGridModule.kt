@@ -8,5 +8,5 @@ import dagger.Provides
 @Module
 class SendGridModule(private val sendGridSettings: SendGridSettings) {
     @Provides
-    fun provideSendGrid(): SendGrid = SendGrid(sendGridSettings.apiKey.toString(), sendGridSettings.test)
+    fun provideSendGrid(): SendGrid = SendGrid(checkNotNull(sendGridSettings.apiKey).value, sendGridSettings.test)
 }

@@ -1,10 +1,11 @@
-Kronslott Project
+*Project Kronslott*
 # DropWizard SendGrid bundle
 DropWizard bundle to set the [SendGrid](https://github.com/sendgrid/sendgrid-java) 
 API key in your DropWizard configuration and expose the SendGrid object through
 [Dagger](https://google.github.io/dagger/).
 
 A simple mail sending service is also exposed via Dagger.
+
 
 ## Usage
 
@@ -45,11 +46,11 @@ class ExampleApp : Application<ExampleConfig>() {
         val sendGridBundle = SendGridBundle<ExampleConfig>()
         bootstrap.addBundle(sendGridBundle)
 
-        bootstrap.addBundle(object : ConfiguredBundle<Configuration> {
+        bootstrap.addBundle(object : ConfiguredBundle<ExampleConfig> {
 
-            override fun run(configuration: Configuration, environment: Environment) {
+            override fun run(configuration: ExampleConfig, environment: Environment) {
                 component = DaggerExampleComponent.builder()
-                        .exampleModule(ExampleModule(configuration as ExampleConfig, environment))
+                        .exampleModule(ExampleModule(configuration, environment))
                         .sendGridComponent(sendGridBundle.sendGridComponent)
                         .build()
             }

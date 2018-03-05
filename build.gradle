@@ -46,18 +46,26 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
-
 sourceSets {
     main {
         java {
             srcDir "${buildDir}/generated/source/kapt2/main"
+        }
+    }
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
         }
     }
 }

@@ -84,4 +84,6 @@ class ExampleService2 @Inject constructor(private val mailSendingService: MailSe
 
 This project is not yet available from Maven Central Repository, but it's 
 available via
-[JitPack.io](https://jitpack.io/#twogood/kronslott-sendgrid).
+[JitPack.io](https://jitpack.io/#se.activout/kronslott-sendgrid).
+
+[![Release](https://jitpack.io/v/se.activout/kronslott-sendgrid.svg)](https://jitpack.io/#se.activout/kronslott-sendgrid)

@@ -10,7 +10,7 @@
  * http://www.eclipse.org/legal/epl-v20.html
  */
 
-package mockito;
+package com.example.mockito;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Namespace;

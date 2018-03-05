@@ -2,7 +2,7 @@ package se.activout.kronslott.sendgrid
 
 import com.nhaarman.mockitokotlin2.*
 import com.sendgrid.*
-import mockito.MockitoExtension
+import com.example.mockito.MockitoExtension
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
